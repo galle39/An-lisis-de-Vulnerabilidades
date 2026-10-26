@@ -37,8 +37,6 @@ Utilizando la función nativa de *Version Tracking* en Ghidra y ejecutando los c
   * **Versión Segura:** Emplea **`strncpy(local_3f8, param_1, 999);`**, limitando estrictamente el número de bytes copiados. Además, incorpora protecciones de pila (*stack canary* mediante `in_GS_OFFSET` y llamadas a `__stack_chk_fail_local()`).
   * **Versión Vulnerable:** Emplea la función insegura **`strcpy(local_3f4, param_1);`**, que carece de control de límites sobre el tamaño de la entrada, permitiendo corromper los registros de la pila.
 
-> 📸 *[Insertar aquí la captura de la comparativa de `vulnerable_function` en Ghidra]*
-
 ---
 
 ## 4. Análisis Dinámico y Evidencias de Ejecución
@@ -48,13 +46,9 @@ Se han ejecutado ambos binarios en entorno Linux (WSL) mediante terminal para co
 * **Entrada normal:** Procesa el argumento correctamente y finaliza de forma controlada.
 * **Entrada masiva (`./seguro $(python3 -c "print('A' * 1050)")`):** Gestiona el límite de tamaño de manera segura gracias al uso de `strncpy` y la protección de la pila.
 
-> 📸 *[Insertar aquí las capturas de pantalla de la ejecución del binario `seguro`]*
-
 ### 4.2. Binario `vulnerable`
 * **Entrada normal:** Muestra el texto introducido sin incidencias aparentes.
 * **Entrada masiva (`./vulnerable $(python3 -c "print('A' * 1050)")`):** Al sobrepasar la capacidad del búfer estático debido a la ausencia de límites de `strcpy`, el programa colapsa generando un **Segmentation fault** (volcado de memoria).
-
-> 📸 *[Insertar aquí las capturas de pantalla del fallo de segmentación en el binario `vulnerable`]*
 
 ---
 
