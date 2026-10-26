@@ -1,10 +1,10 @@
-# 🛡️ Análisis de Binarios y Binary Diffing: Mitigación de Vulnerabilidades
+# Análisis de Binarios y Binary Diffing: Mitigación de Vulnerabilidades
 
 Práctica correspondiente al **Módulo 6: Vulnerabilidades** del Máster en Ciberseguridad. Este repositorio documenta el proceso de ingeniería inversa, análisis estático comparativo (*binary diffing*) y validación dinámica de fallos por desbordamiento de búfer (*buffer overflow*) empleando **Ghidra**.
 
 ---
 
-## 📋 Tabla de Contenidos
+## Tabla de Contenidos
 1. [Introducción y Objetivos](#-introducción-y-objetivos)
 2. [Entorno de Trabajo](#-entorno-de-trabajo)
 3. [Análisis Estático (Ghidra Version Tracking)](#-análisis-estático-ghidra-version-tracking)
@@ -58,7 +58,7 @@ Se han ejecutado ambos binarios en entorno Linux (WSL) mediante terminal para co
 
 ---
 
-## 🔍 5. Contexto Teórico: Casos Reales y Vulnerabilidades 0-Day
+## 5. Contexto Teórico: Casos Reales y Vulnerabilidades 0-Day
 
 ### 5.1. Caso Real: El impacto del Buffer Overflow (MS03-026 / Gusano Blaster)
 Un ejemplo histórico y devastador de este fallo a nivel de sistema operativo ocurrió con la vulnerabilidad **MS03-026** en el servicio RPC de Microsoft Windows.
